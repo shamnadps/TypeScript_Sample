@@ -9,6 +9,5 @@ To setup a simple TypeScript project to learn and understand Typescript
 Run
 
 ```bash
-tsc index.ts
-node index.js
+npm start
 ```

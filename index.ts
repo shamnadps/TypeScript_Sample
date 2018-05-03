@@ -1,12 +1,8 @@
-import { Router, Request, Response } from "express";
+import { Express, Request, Response } from "express";
+import * as express from "express";
+import { todoRoutes } from "./todo.routes";
+const app: Express = express();
 
-const app: Router = Router();
+app.use("/todos", todoRoutes);
 
-export interface Todo {
-  name: string;
-  done: boolean;
-}
-
-const arr: Todo[] = [];
-
-app.get("todos", (req, res) => res.send(arr.map(todo => todo.name).join(", ")));
+app.listen(4000, () => console.log("Example app listening on port 4000!"));
